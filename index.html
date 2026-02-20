@@ -24,7 +24,9 @@ header {
   box-shadow: 0 2px 6px rgba(0,0,0,0.05);
 }
 
-header img { height: 40px; }
+header img {
+  height: 40px;
+}
 
 nav a {
   margin-left: 25px;
@@ -43,73 +45,99 @@ nav a {
 .hero {
   padding: 80px 60px;
   display: flex;
+  align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
 }
 
-.hero h1 { font-size: 44px; margin-bottom: 20px; }
-.hero span { color: #ff6a00; }
-.hero p { font-size: 18px; color: #555; }
+.hero h1 {
+  font-size: 44px;
+  margin-bottom: 20px;
+}
+
+.hero span {
+  color: #ff6a00;
+}
+
+.hero p {
+  font-size: 18px;
+  color: #555;
+}
 
 .hero button {
   margin-top: 25px;
   padding: 14px 22px;
   border: none;
   border-radius: 6px;
+  font-size: 16px;
   cursor: pointer;
 }
 
-.primary { background: #ff6a00; color: white; }
-.secondary { margin-left: 12px; background: #eaeaea; }
+.primary {
+  background: #ff6a00;
+  color: white;
+}
+
+.secondary {
+  margin-left: 12px;
+  background: #eaeaea;
+}
 
 .section {
-  padding: 60px;
+  padding: 80px 60px;
   background: white;
   margin-top: 20px;
 }
 
+.section h2 {
+  margin-bottom: 10px;
+}
+
 .cards {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-  margin-top: 30px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  margin-top: 40px;
 }
 
 .card {
   background: #fafafa;
-  padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.05);
-  font-size: 14px;
+  padding: 30px;
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
 }
 
 .card h3 {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   margin-top: 0;
 }
 
 .card i {
   color: #ff6a00;
+  font-size: 20px;
 }
 
 .card p {
+  margin-top: 10px;
+  margin-bottom: 15px;
+  line-height: 1.6;
   color: #555;
-  margin-bottom: 10px;
+  font-size: 14px;
 }
 
-.extra {
-  display: none;
-  margin-top: 10px;
+.card ul {
+  padding-left: 18px;
+  margin: 0;
 }
 
-.read-btn {
-  color: #ff6a00;
-  cursor: pointer;
-  font-weight: 600;
-  margin-top: 10px;
-  display: inline-block;
+.card ul li {
+  margin-bottom: 8px;
+  line-height: 1.5;
+  font-size: 14px;
 }
 
 .cta {
@@ -133,28 +161,20 @@ footer {
   color: white;
 }
 
-@media(max-width: 1000px){
-  .cards { grid-template-columns: repeat(2, 1fr); }
-}
-
+/* Responsive */
 @media(max-width: 768px){
-  .hero { flex-direction: column; text-align: center; }
-  .cards { grid-template-columns: 1fr; }
-}
-</style>
+  .hero{
+    flex-direction: column;
+    text-align: center;
+  }
 
-<script>
-function toggleContent(id) {
-  var element = document.getElementById(id);
-  if (element.style.display === "none" || element.style.display === "") {
-    element.style.display = "block";
-  } else {
-    element.style.display = "none";
+  .cards {
+    grid-template-columns: 1fr;
   }
 }
-</script>
-
+</style>
 </head>
+
 <body>
 
 <header>
@@ -187,9 +207,7 @@ style="border-radius:12px; box-shadow:0 20px 40px rgba(0,0,0,0.15);">
 
 <div class="card">
 <h3><i class="fa-solid fa-envelope"></i> Email Marketing</h3>
-<p>Managing campaigns manually leads to missed follow-ups and poor tracking.</p>
-<span class="read-btn" onclick="toggleContent('email')">Read More</span>
-<div class="extra" id="email">
+<p>Managing campaigns manually leads to missed follow-ups and poor tracking. Prospect Accel simplifies email marketing with structured tracking and CRM-based automation.</p>
 <ul>
 <li>Send targeted email campaigns from CRM</li>
 <li>Track opens, responses, and engagement</li>
@@ -197,13 +215,10 @@ style="border-radius:12px; box-shadow:0 20px 40px rgba(0,0,0,0.15);">
 <li>Convert email responses into leads instantly</li>
 </ul>
 </div>
-</div>
 
 <div class="card">
 <h3><i class="fa-solid fa-comments"></i> Live Chat</h3>
-<p>Website visitors leave when responses are delayed.</p>
-<span class="read-btn" onclick="toggleContent('chat')">Read More</span>
-<div class="extra" id="chat">
+<p>Website visitors leave when responses are delayed. Prospect Accel ensures every enquiry is captured and routed instantly.</p>
 <ul>
 <li>Real-time AI + Human chat support</li>
 <li>Auto capture of visitor details</li>
@@ -211,13 +226,10 @@ style="border-radius:12px; box-shadow:0 20px 40px rgba(0,0,0,0.15);">
 <li>Chat history logged inside CRM</li>
 </ul>
 </div>
-</div>
 
 <div class="card">
 <h3><i class="fa-solid fa-phone"></i> Call Integration</h3>
-<p>Manual dialing and untracked calls reduce productivity.</p>
-<span class="read-btn" onclick="toggleContent('call')">Read More</span>
-<div class="extra" id="call">
+<p>Manual dialing and untracked calls reduce productivity. Prospect Accel integrates calling directly into your workflow.</p>
 <ul>
 <li>One-click calling from CRM</li>
 <li>Automatic call logging</li>
@@ -225,20 +237,16 @@ style="border-radius:12px; box-shadow:0 20px 40px rgba(0,0,0,0.15);">
 <li>Complete call history tracking</li>
 </ul>
 </div>
-</div>
 
 <div class="card">
 <h3><i class="fa-solid fa-link"></i> Email Integration</h3>
-<p>Emails scattered across inboxes cause missed follow-ups.</p>
-<span class="read-btn" onclick="toggleContent('integration')">Read More</span>
-<div class="extra" id="integration">
+<p>Emails scattered across inboxes cause missed follow-ups. Prospect Accel connects Outlook directly with CRM.</p>
 <ul>
 <li>Send emails from contact profile</li>
 <li>Auto-sync email conversations</li>
 <li>View full reply history</li>
 <li>Centralized communication tracking</li>
 </ul>
-</div>
 </div>
 
 </div>
