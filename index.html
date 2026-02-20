@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Prospect Accel CRM</title>
 
-<!-- Font Awesome icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
@@ -90,24 +89,47 @@ nav a {
   margin-top: 20px;
 }
 
+.section h2 {
+  margin-bottom: 20px;
+}
+
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+  gap: 25px;
   margin-top: 30px;
 }
 
 .card {
   background: #fafafa;
   padding: 25px;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-  font-size: 18px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+}
+
+.card h3 {
+  margin-top: 0;
 }
 
 .card i {
   color: #ff6a00;
+  font-size: 22px;
   margin-right: 8px;
+}
+
+.card p {
+  color: #555;
+  font-size: 14px;
+}
+
+.card ul {
+  padding-left: 18px;
+  margin-top: 10px;
+}
+
+.card ul li {
+  font-size: 14px;
+  margin-bottom: 6px;
 }
 
 .cta {
@@ -143,7 +165,7 @@ footer {
 <body>
 
 <header>
-<img src="logo.png" alt="logo">
+<img src="logo.png" alt="Prospect Accel Logo">
 <nav>
 <a href="#">Features</a>
 <a href="#">Industries</a>
@@ -169,10 +191,51 @@ style="border-radius:12px; box-shadow:0 20px 40px rgba(0,0,0,0.15);">
 <h2>Prospect Accel fixes this</h2>
 
 <div class="cards">
-<div class="card"><i class="fa-solid fa-envelope"></i> Email Marketing</div>
-<div class="card"><i class="fa-solid fa-comments"></i> Live Chat</div>
-<div class="card"><i class="fa-solid fa-phone"></i> Call Integration</div>
-<div class="card"><i class="fa-solid fa-link"></i> Email Integration</div>
+
+<div class="card">
+<h3><i class="fa-solid fa-envelope"></i> Email Marketing</h3>
+<p>Managing campaigns manually leads to missed follow-ups and poor tracking. Prospect Accel simplifies email marketing with structured tracking and CRM-based automation.</p>
+<ul>
+<li>Send targeted email campaigns from CRM</li>
+<li>Track opens, responses, and engagement</li>
+<li>Store all campaign history automatically</li>
+<li>Convert email responses into leads instantly</li>
+</ul>
+</div>
+
+<div class="card">
+<h3><i class="fa-solid fa-comments"></i> Live Chat</h3>
+<p>Website visitors leave when responses are delayed. Prospect Accel ensures every enquiry is captured and routed instantly.</p>
+<ul>
+<li>Real-time AI + Human chat support</li>
+<li>Auto capture of visitor details</li>
+<li>Category-based routing to experts</li>
+<li>Chat history logged inside CRM</li>
+</ul>
+</div>
+
+<div class="card">
+<h3><i class="fa-solid fa-phone"></i> Call Integration</h3>
+<p>Manual dialing and untracked calls reduce productivity. Prospect Accel integrates calling directly into your workflow.</p>
+<ul>
+<li>One-click calling from CRM</li>
+<li>Automatic call logging</li>
+<li>Call recording storage</li>
+<li>Complete call history tracking</li>
+</ul>
+</div>
+
+<div class="card">
+<h3><i class="fa-solid fa-link"></i> Email Integration</h3>
+<p>Emails scattered across inboxes cause missed follow-ups. Prospect Accel connects Outlook directly with CRM.</p>
+<ul>
+<li>Send emails from contact profile</li>
+<li>Auto-sync email conversations</li>
+<li>View full reply history</li>
+<li>Centralized communication tracking</li>
+</ul>
+</div>
+
 </div>
 </section>
 
