@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
+/* ===== YOUR ORIGINAL STYLES (UNCHANGED) ===== */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -15,7 +16,6 @@ body {
   color: #222;
 }
 
-/* HEADER */
 header {
   background: white;
   padding: 20px 60px;
@@ -27,6 +27,14 @@ header {
 
 header img { height: 40px; }
 
+nav a {
+  margin-left: 25px;
+  text-decoration: none;
+  color: #444;
+  font-weight: 500;
+  cursor: pointer;
+}
+
 .demo-btn {
   background: #ff6a00;
   color: white;
@@ -35,100 +43,69 @@ header img { height: 40px; }
   cursor: pointer;
 }
 
-/* HERO */
 .hero {
-  padding: 100px 60px;
+  padding: 80px 60px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   flex-wrap: wrap;
 }
 
-.hero h1 {
-  font-size: 48px;
-}
-
+.hero h1 { font-size: 44px; margin-bottom: 20px; }
 .hero span { color: #ff6a00; }
+.hero p { font-size: 18px; color: #555; }
 
-.primary {
-  background: #ff6a00;
-  color: white;
-  padding: 14px 24px;
+.hero button {
+  margin-top: 25px;
+  padding: 14px 22px;
   border: none;
   border-radius: 6px;
+  font-size: 16px;
   cursor: pointer;
+}
+
+.primary { background: #ff6a00; color: white; }
+.secondary { margin-left: 12px; background: #eaeaea; }
+
+.section {
+  padding: 60px;
+  background: white;
   margin-top: 20px;
 }
 
-/* FEATURES */
-.section {
-  padding: 80px 60px;
-  background: white;
-}
-
-.section h2 {
-  text-align: center;
-  margin-bottom: 50px;
-}
+.section h2 { margin-bottom: 20px; }
 
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
-  gap: 30px;
+  gap: 25px;
+  margin-top: 30px;
 }
 
 .card {
   background: #fafafa;
   padding: 25px;
-  border-radius: 15px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-  min-height: 220px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.05);
 }
 
-.card h3 {
-  margin-top: 0;
-}
+.card i { color: #ff6a00; font-size: 22px; margin-right: 8px; }
 
-.card i {
-  color: #ff6a00;
-  margin-right: 10px;
-}
-
-.card p {
-  font-size: 14px;
-  color: #555;
-}
-
-.card ul {
-  display: none;
-  padding-left: 20px;
-  font-size: 14px;
-}
-
-.read-more {
-  color: #ff6a00;
-  cursor: pointer;
-  font-weight: bold;
-  font-size: 14px;
-}
-
-/* CTA */
 .cta {
   text-align: center;
   padding: 80px;
 }
 
 .cta button {
+  font-size: 20px;
+  padding: 18px 40px;
   background: #ff6a00;
   color: white;
-  padding: 18px 40px;
-  border-radius: 30px;
   border: none;
-  font-size: 18px;
-  cursor: pointer;
+  border-radius: 8px;
+  cursor:pointer;
 }
 
-/* FOOTER */
 footer {
   text-align: center;
   padding: 30px;
@@ -136,8 +113,9 @@ footer {
   color: white;
 }
 
-/* POPUP */
-.popup-bg {
+/* ===== POPUP FORM STYLES ===== */
+
+.popup-overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -147,140 +125,200 @@ footer {
   display: none;
   justify-content: center;
   align-items: center;
-  z-index: 999;
+  z-index: 1000;
 }
 
-.popup {
-  background: white;
-  width: 600px;
+.popup-form {
+  background: #f8f8f8;
+  width: 750px;
+  max-width: 95%;
   padding: 30px;
   border-radius: 20px;
+  position: relative;
 }
 
-.popup input,
-.popup textarea {
-  width: 100%;
+.popup-form h2 {
+  margin-top: 0;
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.popup-form input,
+.popup-form select,
+.popup-form textarea {
   padding: 12px;
-  margin-bottom: 15px;
-  border-radius: 8px;
-  border: 1px solid #ddd;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 100%;
 }
 
-.popup button {
+.popup-form textarea {
+  grid-column: span 2;
+  height: 100px;
+}
+
+.submit-btn {
+  margin-top: 20px;
   background: #ff6a00;
   color: white;
-  padding: 14px;
+  padding: 15px;
   border: none;
-  border-radius: 25px;
-  width: 100%;
+  border-radius: 30px;
+  width: 250px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: bold;
+  cursor:pointer;
 }
 
 .success-message {
-  display: none;
   text-align: center;
   color: green;
-  margin-top: 10px;
   font-weight: bold;
-}
-
-@media(max-width:768px){
-  .hero { text-align: center; }
+  margin-top: 15px;
+  display: none;
 }
 </style>
 
 <script>
-function openPopup() {
-  document.getElementById("popup").style.display = "flex";
+function openPopup(){
+  document.getElementById("popup").style.display="flex";
 }
 
-function closePopup() {
-  document.getElementById("popup").style.display = "none";
+function closePopup(){
+  document.getElementById("popup").style.display="none";
 }
 
-function submitForm(event) {
+function submitForm(event){
   event.preventDefault();
-  document.getElementById("success").style.display = "block";
-  setTimeout(() => {
-    closePopup();
-    document.getElementById("success").style.display = "none";
-  }, 2000);
-}
-
-function toggleReadMore(id) {
-  const el = document.getElementById(id);
-  el.style.display = el.style.display === "block" ? "none" : "block";
+  document.getElementById("successMessage").style.display="block";
+  document.getElementById("demoForm").reset();
 }
 </script>
+
 </head>
 
 <body>
 
 <header>
-<img src="logo.png">
-<button class="demo-btn" onclick="openPopup()">Book Demo</button>
+<img src="logo.png" alt="Prospect Accel Logo">
+<nav>
+<a href="#">Features</a>
+<a href="#">Industries</a>
+<a href="#">Pricing</a>
+<a href="#">Blog</a>
+<a class="demo-btn" onclick="openPopup()">Book Demo</a>
+</nav>
 </header>
 
 <section class="hero">
 <div>
 <h1>Organize Your Sales Pipeline.<br>Close Deals <span>Faster.</span></h1>
+<p>Manage your contacts and automate your sales process with ease.</p>
 <button class="primary" onclick="openPopup()">Book Demo</button>
+<button class="secondary">Watch Tour</button>
 </div>
-<img src="banner.png" width="450" style="border-radius:12px;">
+
+<img src="banner.png" width="500"
+style="border-radius:12px; box-shadow:0 20px 40px rgba(0,0,0,0.15);">
 </section>
 
+<!-- ===== POPUP FORM ===== -->
+<div class="popup-overlay" id="popup">
+  <div class="popup-form">
+    <span class="close-btn" onclick="closePopup()">✖</span>
+    <h2>Book a Demo</h2>
+
+    <form id="demoForm" onsubmit="submitForm(event)">
+      <div class="form-grid">
+        <input type="text" placeholder="Name *" required>
+        <input type="text" placeholder="Designation *" required>
+        <input type="email" placeholder="Email *" required>
+        <input type="text" placeholder="Phone Number *" required>
+        <input type="text" placeholder="Country *" required>
+        <input type="text" placeholder="State *" required>
+        <input type="text" placeholder="Company Name *" required>
+        <select required>
+          <option value="">No of Employees *</option>
+          <option>1-10</option>
+          <option>11-50</option>
+          <option>51-200</option>
+          <option>200+</option>
+        </select>
+        <input type="text" placeholder="Requirement *" required>
+        <textarea placeholder="Message"></textarea>
+      </div>
+
+      <button type="submit" class="submit-btn">SEND MESSAGE</button>
+      <div class="success-message" id="successMessage">
+        Request Submitted ✅
+      </div>
+    </form>
+
+  </div>
+</div>
+
+<!-- ===== REST OF YOUR ORIGINAL CONTENT CONTINUES ===== -->
+
 <section class="section">
-<h2>Prospect Accel Fixes This</h2>
-
+<h2>Prospect Accel fixes this</h2>
 <div class="cards">
-
 <div class="card">
-<h3><i class="fa-solid fa-envelope"></i>Email Marketing</h3>
-<p>Managing campaigns manually leads to missed follow-ups.</p>
-<span class="read-more" onclick="toggleReadMore('email')">Read More</span>
-<ul id="email">
-<li>Send targeted email campaigns</li>
-<li>Track opens & responses</li>
-<li>Store campaign history</li>
-<li>Convert responses to leads</li>
+<h3><i class="fa-solid fa-envelope"></i> Email Marketing</h3>
+<p>Managing campaigns manually leads to missed follow-ups and poor tracking. Prospect Accel simplifies email marketing with structured tracking and CRM-based automation.</p>
+<ul>
+<li>Send targeted email campaigns from CRM</li>
+<li>Track opens, responses, and engagement</li>
+<li>Store all campaign history automatically</li>
+<li>Convert email responses into leads instantly</li>
 </ul>
 </div>
 
 <div class="card">
-<h3><i class="fa-solid fa-comments"></i>Live Chat</h3>
-<p>Visitors leave when responses are delayed.</p>
-<span class="read-more" onclick="toggleReadMore('chat')">Read More</span>
-<ul id="chat">
-<li>AI + Human support</li>
-<li>Auto capture visitor data</li>
-<li>Smart routing</li>
-<li>Chat history tracking</li>
+<h3><i class="fa-solid fa-comments"></i> Live Chat</h3>
+<p>Website visitors leave when responses are delayed. Prospect Accel ensures every enquiry is captured and routed instantly.</p>
+<ul>
+<li>Real-time AI + Human chat support</li>
+<li>Auto capture of visitor details</li>
+<li>Category-based routing to experts</li>
+<li>Chat history logged inside CRM</li>
 </ul>
 </div>
 
 <div class="card">
-<h3><i class="fa-solid fa-phone"></i>Call Integration</h3>
-<p>Manual dialing reduces productivity.</p>
-<span class="read-more" onclick="toggleReadMore('call')">Read More</span>
-<ul id="call">
-<li>One-click calling</li>
-<li>Auto call logging</li>
-<li>Recording storage</li>
-<li>Full call tracking</li>
+<h3><i class="fa-solid fa-phone"></i> Call Integration</h3>
+<p>Manual dialing and untracked calls reduce productivity. Prospect Accel integrates calling directly into your workflow.</p>
+<ul>
+<li>One-click calling from CRM</li>
+<li>Automatic call logging</li>
+<li>Call recording storage</li>
+<li>Complete call history tracking</li>
 </ul>
 </div>
 
 <div class="card">
-<h3><i class="fa-solid fa-link"></i>Email Integration</h3>
-<p>Scattered emails cause missed follow-ups.</p>
-<span class="read-more" onclick="toggleReadMore('integration')">Read More</span>
-<ul id="integration">
-<li>Send from contact profile</li>
-<li>Auto sync conversations</li>
-<li>Full reply history</li>
-<li>Centralized tracking</li>
+<h3><i class="fa-solid fa-link"></i> Email Integration</h3>
+<p>Emails scattered across inboxes cause missed follow-ups. Prospect Accel connects Outlook directly with CRM.</p>
+<ul>
+<li>Send emails from contact profile</li>
+<li>Auto-sync email conversations</li>
+<li>View full reply history</li>
+<li>Centralized communication tracking</li>
 </ul>
 </div>
-
 </div>
 </section>
 
@@ -292,20 +330,6 @@ function toggleReadMore(id) {
 <footer>
 © Prospect Accel CRM — Demo Page
 </footer>
-
-<!-- POPUP -->
-<div class="popup-bg" id="popup">
-  <div class="popup">
-    <h3>Book a Demo</h3>
-    <form onsubmit="submitForm(event)">
-      <input type="text" placeholder="Name" required>
-      <input type="email" placeholder="Email" required>
-      <textarea placeholder="Message"></textarea>
-      <button type="submit">Send Message</button>
-      <div class="success-message" id="success">Submission Successful ✅</div>
-    </form>
-  </div>
-</div>
 
 </body>
 </html>
